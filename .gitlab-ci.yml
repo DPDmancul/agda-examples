@@ -1,0 +1,22 @@
+stages:
+  - build
+  - publish
+
+build:
+  image: nixos/nix
+  stage: build
+  script:
+    - nix-channel --add https://nixos.org/channels/nixos-unstable nixos
+    - nix-channel --update
+    - nix-shell --run "cd $(pwd); make"
+  artifacts:
+    paths: [ html ]
+
+pages:
+  stage: publish
+  script:
+    - mv html public
+  artifacts:
+    paths: [ public ]
+  rules: [ if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH ]
+
