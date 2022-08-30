@@ -1,0 +1,10 @@
+#! /bin/sh
+
+# Add code tag to Agda code blocks
+
+if [ "$1" = "supports" ]; then
+  exit 0
+fi
+
+jq '.[1]' | sed 's%\(<pre class=\\"Agda\\">\)\(\(</\?a[^>]*>\|[^<]\)*\)\(</pre>\)%\1<code>\2</code>\4%g'
+

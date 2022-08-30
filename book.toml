@@ -1,0 +1,18 @@
+[book]
+title = "Agda examples"
+authors = [ "Davide Peressoni" ]
+# description = ""
+language = "en"
+src = "tmp"
+
+[preprocessor.agda-block]
+command = "./mdbook-agda-block"
+
+[output.html]
+curly-quotes = true
+additional-css = [ "tmp/Agda.css" ]
+git-repository-url = "https://gitlab.com/DPDmancul/agda-examples"
+git-repository-icon = "fa-gitlab"
+edit-url-template = "https://gitlab.com/DPDmancul/agda-examples/blob/main/{path}"
+
+

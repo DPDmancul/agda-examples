@@ -10,12 +10,12 @@ build:
     - nix-channel --update
     - nix-shell --run "cd $(pwd); make"
   artifacts:
-    paths: [ html ]
+    paths: [ book ]
 
 pages:
   stage: publish
   script:
-    - mv html public
+    - mv book public
   artifacts:
     paths: [ public ]
   rules: [ if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH ]

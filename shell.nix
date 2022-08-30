@@ -2,6 +2,8 @@
 pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
     gnumake
+    gnused
+    jq
     (agda.withPackages (p: [
       (p.standard-library.overrideAttrs (oldAttrs: rec {
         version = "1.7.1";
@@ -13,5 +15,6 @@ pkgs.mkShell {
         };
       }))
     ]))
+    mdbook
   ];
 }
