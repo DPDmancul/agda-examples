@@ -2,5 +2,6 @@
 
 [Introduction](./index.md)
 
-[Natural numbers](./Naturals.md)<!--lagda-->
-[Syllogisms](./Syllogism.md)<!--lagda-->
+[Natural numbers](./Naturals.lagda.md)
+
+[Syllogisms](./Syllogism.lagda.md)
