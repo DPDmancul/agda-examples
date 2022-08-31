@@ -15,7 +15,7 @@ html: $(SRC)/index.agda
 	cd "$(SRC)"; agda --html --html-highlight=auto --html-dir="$(TMP)" "$(MAIN)"
 # do not use agda index but md one
 	@rm "$(TMP)/index.html"
-	@cp "$(SRC)/index.md" "$(TMP)"
+	@cp "$(SRC)/"*.md "$(TMP)"
 	@sed 's%(\([^)]*\)\.lagda\.md)%(\1.md)%' "$(SRC)/SUMMARY.md" > "$(TMP)/SUMMARY.md"
 # agda css must have precedence
 	@chmod +w "$(TMP)/"*.css

@@ -2,6 +2,16 @@
 
 [Introduction](./index.md)
 
-[Natural numbers](./Naturals.lagda.md)
+# Math
 
-[Syllogisms](./Syllogism.lagda.md)
+- [Natural numbers](./Naturals.lagda.md)
+
+# Logic
+
+- [Propositional logic](./Propositional.lagda.md)
+- [Syllogisms](./Syllogism.lagda.md)
+
+-----
+
+[Input cheatsheet](./input.md)
+

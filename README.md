@@ -2,7 +2,13 @@
 
 # Agda examples
 
-TODO description.
+[Agda](https://wiki.portal.chalmers.se/agda) is a [proof assistant](https://en.wikipedia.org/wiki/Proof_assistant) based on [Martin-Löf type theory](https://en.wikipedia.org/wiki/Intuitionistic_type_theory), which syntax is highly inspired by Haskell, a functional language. Proof assistants help writing proofs and check them are correct.
+
+Here are reported some examples of the usage of Agda as proof assistant, used as help material during an introductive lecture to proof assistants.
+
+You can click on the symbols in the code to see their definition: this is very useful in particular for standard library items which definition is not reported in the examples.
+
+<!-- View [video of the lecture (in italian)](TODO). -->
 
 <!-- ANCHOR_END: header -->
 
