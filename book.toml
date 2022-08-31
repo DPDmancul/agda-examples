@@ -10,6 +10,7 @@ command = "./mdbook-agda-block"
 
 [output.html]
 curly-quotes = true
+mathjax-support = true
 additional-css = [ "tmp/Agda.css" ]
 git-repository-url = "https://gitlab.com/DPDmancul/agda-examples"
 git-repository-icon = "fa-gitlab"

@@ -25,7 +25,6 @@ html: $(SRC)/index.agda
 
 %/index.agda: $(SRC)/SUMMARY.md
 	@mkdir -p "$*"
-	echo "{-# OPTIONS --safe --without-K #-}" > "$@"
 	grep ".lagda.md)" "$<" | sed 's%^.*\](\./\([^.]*\)\.lagda.md).*$$%import \1%' >> "$@"
 
 .PHONY: clean

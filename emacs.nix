@@ -24,7 +24,11 @@
 
           (global-set-key (kbd "C-c C-v") 'agda2-compute-normalised-maybe-toplevel)
           (add-hook 'agda2-mode-hook
-                    #'(lambda () (define-key (current-local-map) (kbd "C-u") (lookup-key (current-local-map) (kbd "C-c")))))
+                    #'(lambda () (define-key (current-local-map) (kbd "C-u") (lookup-key (current-local-map) (kbd "C-c")))
+                                 ;; support for terminal
+                                 (define-key (current-local-map) (kbd "C-c ,") (lookup-key (current-local-map) (kbd "C-c C-,")))
+                                 (define-key (current-local-map) (kbd "C-c .") (lookup-key (current-local-map) (kbd "C-c C-.")))
+                    ))
 
           (run-with-idle-timer 60 t #'(lambda () (save-some-buffers t nil)))
 
