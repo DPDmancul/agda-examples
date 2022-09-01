@@ -1,0 +1,2 @@
+*.md linguist-detectable=true
+*.lagda.* linguist-detectable=Agda
