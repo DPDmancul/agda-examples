@@ -17,15 +17,15 @@ html: $(SRC)/index.agda
 	@rm "$(TMP)/index.html"
 	@cp "$(SRC)/"*.md "$(TMP)"
 	@sed 's%(\([^)]*\)\.lagda\.md)%(\1.md)%' "$(SRC)/SUMMARY.md" > "$(TMP)/SUMMARY.md"
+	@sed -i 's%(\([^)]*\)\.agda)%(\1.html)%' "$(TMP)/SUMMARY.md"
 # agda css must have precedence
 	@chmod +w "$(TMP)/"*.css
 	@sed -i 's/\(;\? *}\|;\)/ !important\1/' "$(TMP)/"*.css
 	mdbook build
 
-
 %/index.agda: $(SRC)/SUMMARY.md
 	@mkdir -p "$*"
-	grep ".lagda.md)" "$<" | sed 's%^.*\](\./\([^.]*\)\.lagda.md).*$$%import \1%' >> "$@"
+	grep "\.l\?agda" "$<" | sed 's%^.*\](\./\([^.]*\)\.l\?agda.*$$%import \1%' >> "$@"
 
 .PHONY: clean
 clean:

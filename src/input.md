@@ -12,9 +12,10 @@ Using emacs agda-mode (as for example in Agdapad) you can input unicode characte
 |        equality        |     ≡     |        `\==`        |
 |       subscript 1      |     ₁     |        `\_1`        |
 |           QED          |     ∎     |        `\qed`       |
-|   left angle bracket   |     ⟨     |  `\langle` or `\<`  | 
-|  right angle bracket   |     ⟩     |  `\rangle` or `\>`  | 
+|   left angle bracket   |     ⟨     |  `\langle` or `\<`  |
+|   right angle bracket  |     ⟩     |  `\rangle` or `\>`  |
 |     symmetric proof    |     ˘     |        `\u{}`       |
+|      concatenation     |     ∷     |        `\::`        |
 
 ## Types
 
