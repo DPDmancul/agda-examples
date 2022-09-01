@@ -20,7 +20,7 @@
 
 -----
 
-[Lecture transcription](./transcription.agda)
+[Lecture transcript](./transcript.agda)
 
 [Input cheatsheet](./input.md)
 

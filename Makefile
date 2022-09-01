@@ -6,10 +6,10 @@ OUT := $(CURDIR)/book
 .PHONY: all test html
 all: html
 
-test:
+test: $(SRC)/index.agda
 	cd "$(SRC)"; agda "$(MAIN)"
 
-html: $(SRC)/index.agda 
+html: $(SRC)/index.agda
 # clean before build
 	@rm -rf "$(TMP)"
 	cd "$(SRC)"; agda --html --html-highlight=auto --html-dir="$(TMP)" "$(MAIN)"
@@ -29,6 +29,7 @@ html: $(SRC)/index.agda
 
 .PHONY: clean
 clean:
+	rm -f "$(SRC)/index.agda"
 	rm -rf "$(OUT)" "$(TMP)"
 
 .PHONY: edit

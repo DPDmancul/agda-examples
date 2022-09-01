@@ -13,6 +13,8 @@
 
           (setq-default indent-tabs-mode nil)
 
+          (menu-bar-mode -1)
+
           (if (not (display-graphic-p))
               (progn (set-terminal-parameter nil 'background-mode 'light)
                      ;;(load-theme 'tsdh-light)
