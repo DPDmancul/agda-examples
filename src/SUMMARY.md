@@ -2,6 +2,8 @@
 
 [Introduction](./index.md)
 
+[Motivations](./why.md)
+
 # Math
 
 - [Natural numbers](./Naturals.lagda.md)
