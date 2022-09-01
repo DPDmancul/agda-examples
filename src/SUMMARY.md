@@ -7,6 +7,7 @@
 # Math
 
 - [Natural numbers](./Naturals.lagda.md)
+- [Commutativity](./Commutativity.lagda.md)
 
 # Logic
 
