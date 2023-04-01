@@ -7,7 +7,7 @@ build:
   stage: build
   script:
     - nix-channel --add https://nixos.org/channels/nixos-unstable nixos
-    - nix-channel --update
+    # - nix-channel --update
     - nix-shell --run "cd $(pwd); make"
   artifacts:
     paths: [ book ]

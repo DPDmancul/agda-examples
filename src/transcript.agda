@@ -1,10 +1,21 @@
+----------------------------------------------------------------------
+------------ Trascrizione dell'incontro del 31 marzo 2023 ------------
+--                                                                  --
+-- Video: https://youtu.be/KMKmyOJvG5s                              --
+-- Appunti (in inglese): https://dpdmancul.gitlab.io/agda-examples/ --
+----------------------------------------------------------------------
+
+---------------------
+-- Numeri naturali --
+---------------------
+
 open import Data.Nat
 
 -- data ℕ : Set where
 --   zero : ℕ
 --   suc : ℕ → ℕ
-  
-open import Relation.Binary.PropositionalEquality
+
+open import Relation.Binary.PropositionalEquality -- per l'uguaglianza (≡)
 
 zero-proof : zero ≡ 0
 zero-proof = refl
@@ -35,7 +46,7 @@ sum-zero : (n : ℕ) → n + 0 ≡ n
 sum-zero zero = refl
 sum-zero (suc n') rewrite sum-zero n' = refl
 
-open import Data.Nat.Properties
+open import Data.Nat.Properties -- contiene +-assoc, +-comm, ...
 
 open ≡-Reasoning
 
@@ -46,7 +57,9 @@ comm-end a b c = begin
   a + (c + b) ≡˘⟨ +-assoc a c b  ⟩
   (a + c) + b ∎
 
---- Logica
+--------------
+--- Logica ---
+--------------
 
 -- Modus ponens
 -- P ⇒ Q e P è vero allora Q è vero
@@ -79,14 +92,20 @@ modus-tollens p→q ¬q p = contradiction (modus-ponens p→q p) ¬q
 
 -- Principio del terzo escluso
 -- X oppure ¬ X
+-- Non si può dimostrarlo, ma si può dimostrare che non è vero che è falso
 
 open import Data.Sum
 
 pte : {A : Set} → ¬ ¬ (A ⊎ ¬ A)
 pte a⊎¬a→⊥ = a⊎¬a→⊥ (inj₂ (λ x → a⊎¬a→⊥ (inj₁ x)))
 
+-- ¬ ¬ X è una monade di continuazione (come le promesse, Future, Task della programmazione asincrona)
+-- non possiamo ottenere il valore di X dalla monade, ma possiamo operare su di esso con una funzione
+-- X → Y, ottenendo una monade ¬ ¬ Y (continue with)
+
 ¬¬map : {X Y : Set} → (X → Y) → ¬ ¬ X → ¬ ¬ Y
-¬¬map x→y x→⊥→⊥ y→⊥ = :x→⊥→⊥ (λ z → y→⊥ (modus-ponens x→y z))
+¬¬map x→y x→⊥→⊥ y→⊥ = x→⊥→⊥ (λ z → y→⊥ (modus-ponens x→y z))
+
 
 -- Sillogismi
 
@@ -99,11 +118,13 @@ module _
   thomas-sbuffa treno-sbuffa thomas-treno thomas = treno-sbuffa (thomas-treno thomas)
 
   -- tutti i treni sbuffano, Aristotele (molto annoiato da questo corso) sbuffa, Aristotele f un treno
-  aristotele-treno : (∀ {x} → Treno x → Sbuffa x) → (∀ {x} → Aristotele x → Sbuffa x) → (∀ {x} → Aristotele x → Treno x)
-  aristotele-treno treno-sbuffa aristotele-sbuffa aristotele = {!!} -- non riempibile
+  -- aristotele-treno : (∀ {x} → Treno x → Sbuffa x) → (∀ {x} → Aristotele x → Sbuffa x) → (∀ {x} → Aristotele x → Treno x)
+  -- aristotele-treno treno-sbuffa aristotele-sbuffa aristotele = -- non dimostrabile (ovviamente)
 
 
---- Programmazione (Informatica)
+----------------------------------
+-- Programmazione (Informatica) --
+----------------------------------
 
 -- open import Data.List
 
@@ -132,3 +153,4 @@ tail (x ∷ xs) = xs
 proof-list : {A : Set} → (xs : List A) → lenght (tail xs) ≡ pred (lenght xs)
 proof-list []       = refl
 proof-list (x ∷ xs) = refl
+
