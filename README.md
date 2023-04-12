@@ -8,7 +8,7 @@ Here are reported some examples of the usage of Agda as proof assistant, used as
 
 You can click on the symbols in the code to see their definition: this is very useful in particular for standard library items which definition is not reported in the examples.
 
-<!-- View [video of the lecture (in italian)](TODO). -->
+View [video of the lecture (in italian)](https://youtu.be/KMKmyOJvG5s).
 
 <!-- ANCHOR_END: header -->
 
